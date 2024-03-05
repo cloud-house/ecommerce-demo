@@ -6,10 +6,10 @@ import {
 } from "@heroicons/react/24/outline";
 
 const iconMap = {
-  collected: BanknotesIcon,
+  salary: BanknotesIcon,
+  checkoutValue: ClockIcon,
+  orders: InboxIcon,
   customers: UserGroupIcon,
-  pending: ClockIcon,
-  invoices: InboxIcon,
 };
 
 export function Card({
@@ -19,7 +19,7 @@ export function Card({
 }: {
   title: string;
   value: number | string;
-  type: "invoices" | "customers" | "pending" | "collected";
+  type: "salary" | "checkoutValue" | "orders" | "customers";
 }) {
   const Icon = iconMap[type];
 

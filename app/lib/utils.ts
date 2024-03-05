@@ -1,5 +1,12 @@
 import { Revenue } from "./definitions";
 
+export const formatCurrency = (amount: number) => {
+  return (amount / 100).toLocaleString("pl-PL", {
+    style: "currency",
+    currency: "PLN",
+  });
+};
+
 export const generateYAxis = (revenue: Revenue[]) => {
   // Calculate what labels we need to display on the y-axis
   // based on highest record and in 1000s

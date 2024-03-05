@@ -23,3 +23,30 @@ export async function fetchProducts() {
     throw new Error("Failed to fetch all products.");
   }
 }
+
+export async function fetchProductById(id: string) {
+  noStore();
+  try {
+    const data = await sql<Product>`
+        SELECT
+            products.id,
+            products.name,
+            products.price,
+            products.quantity,
+            products.image_url
+        FROM products
+        WHERE products.id = ${id};
+      `;
+
+    const product = data.rows.map((product) => ({
+      ...product,
+      // Convert price from cents
+      price: product.price / 100,
+    }));
+
+    return product[0];
+  } catch (error) {
+    console.error("Database Error:", error);
+    throw new Error("Failed to fetch invoice.");
+  }
+}

@@ -1,5 +1,5 @@
 import { fetchProductById } from "@/app/lib/data";
-import { Header } from "@/app/ui/menu";
+import { Header } from "@/app/ui/header";
 import { Product } from "@/app/ui/shop/product";
 
 export default async function Page({ params }: { params: { id: string } }) {
@@ -8,8 +8,10 @@ export default async function Page({ params }: { params: { id: string } }) {
   return (
     <>
       <Header />
-      <main className="flex min-h-screen flex-col items-center justify-between p-24">
-        <Product isLink={false} product={product} />
+      <main className="container mx-auto px-4 py-24">
+        <div className="max-w-xl m-auto">
+          <Product isLink={false} product={product} />
+        </div>
       </main>
     </>
   );

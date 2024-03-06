@@ -4,7 +4,7 @@ import { Product } from "@/app/ui/shop/product";
 export default async function ProductsWrapper() {
   const products = await fetchProducts();
   return (
-    <div className="bg-white w-full max-w-7xl">
+    <div className="bg-white w-full">
       <div className="mx-auto px-4 py-16 sm:px-6 sm:py-24 lg:px-12">
         <h2 className="text-2xl font-bold tracking-tight text-gray-900 mb-10">
           Produkty

@@ -23,7 +23,7 @@ export function Hero() {
         </p>
         <button
           onClick={handleClick}
-          className="inline-flex items-center justify-center px-5 py-3 mr-3 text-base font-medium text-center text-white rounded-lg bg-black hover:bg-gray-700"
+          className="inline-flex items-center justify-center px-5 py-3 mr-3 text-base font-medium text-center text-white rounded-lg bg-black hover:bg-gray-700 mb-3 lg:mb-0"
         >
           Zobacz produkty
         </button>

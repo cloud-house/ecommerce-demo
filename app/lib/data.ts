@@ -16,8 +16,11 @@ export async function fetchProducts() {
         ORDER BY name ASC
       `;
 
-    const customers = data.rows;
-    return customers;
+    const products = data.rows.map((product) => ({
+      ...product,
+      price: product.price / 100,
+    }));
+    return products;
   } catch (err) {
     console.error("Database Error:", err);
     throw new Error("Failed to fetch all products.");
@@ -40,13 +43,12 @@ export async function fetchProductById(id: string) {
 
     const product = data.rows.map((product) => ({
       ...product,
-      // Convert price from cents
       price: product.price / 100,
     }));
 
     return product[0];
   } catch (error) {
     console.error("Database Error:", error);
-    throw new Error("Failed to fetch invoice.");
+    throw new Error("Failed to fetch product.");
   }
 }

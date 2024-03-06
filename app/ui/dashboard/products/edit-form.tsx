@@ -41,6 +41,7 @@ export default function EditProductForm({ product }: { product: Product }) {
               defaultValue={product.name}
               placeholder="Wprowadź nazwę"
               className="peer block w-full rounded-md border border-gray-200 py-2 pl-10 text-sm outline-2 placeholder:text-gray-500"
+              required
             />
             <UserCircleIcon className="pointer-events-none absolute left-3 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-gray-500" />
           </div>
@@ -61,6 +62,7 @@ export default function EditProductForm({ product }: { product: Product }) {
                 defaultValue={product.price}
                 placeholder="Wprowadź cenę"
                 className="peer block w-full rounded-md border border-gray-200 py-2 pl-10 text-sm outline-2 placeholder:text-gray-500"
+                required
               />
               <CurrencyDollarIcon className="pointer-events-none absolute left-3 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-gray-500 peer-focus:text-gray-900" />
             </div>
@@ -82,6 +84,7 @@ export default function EditProductForm({ product }: { product: Product }) {
                 defaultValue={product.quantity}
                 placeholder="Wprowadź ilość"
                 className="peer block w-full rounded-md border border-gray-200 py-2 pl-10 text-sm outline-2 placeholder:text-gray-500"
+                required
               />
               <CheckIcon className="pointer-events-none absolute left-3 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-gray-500 peer-focus:text-gray-900" />
             </div>
@@ -99,6 +102,7 @@ export default function EditProductForm({ product }: { product: Product }) {
               name="image_url"
               className="peer block w-full cursor-pointer rounded-md border border-gray-200 py-2 pl-10 text-sm outline-2 placeholder:text-gray-500"
               defaultValue={product.image_url}
+              required
             >
               <option value="" disabled>
                 Wybierz zdjęcie

@@ -1,6 +1,5 @@
 "use client";
 import { ShoppingCartIcon } from "@heroicons/react/24/outline";
-import { Button } from "@/app/ui/button";
 import { Product } from "@/app/lib/definitions";
 import Image from "next/image";
 import clsx from "clsx";
@@ -56,10 +55,13 @@ export function Product({
           </p>
         </div>
       </div>
-      <Button onClick={handleAddToCart} className="mt-4 w-full">
+      <button
+        onClick={handleAddToCart}
+        className="mt-4 w-full flex h-10 items-center text-center justify-center rounded-lg font-medium text-white bg-black hover:bg-gray-700 px-4 text-sm transition-colors"
+      >
         <ShoppingCartIcon className="w-6 h-6 mr-3" />
         Dodaj do koszyka
-      </Button>
+      </button>
     </div>
   );
 }

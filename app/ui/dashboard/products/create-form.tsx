@@ -3,11 +3,26 @@ import {
   CheckIcon,
   CurrencyDollarIcon,
   UserCircleIcon,
+  PhotoIcon,
 } from "@heroicons/react/24/outline";
-import { Button } from "@/app/ui/button";
+import { Button } from "@/app/ui/dashboard/button";
 import { createProduct } from "@/app/lib/actions";
 
 export default function CreateProductForm() {
+  const availableImages = [
+    {
+      value: "/dres-adidas-big-logo.jpg",
+      displayValue: "Dres Adidas Big Logo",
+    },
+    {
+      value: "/dres-meski-adidas-3-stripes.jpg",
+      displayValue: "Dres Meski Adidas 3-stripes",
+    },
+    {
+      value: "/dres-meski-adidas-ribbed-aeroready.jpg",
+      displayValue: "Dres Męski Adidas Ribbed Aeroready",
+    },
+  ];
   return (
     <form action={createProduct}>
       <div className="rounded-md bg-gray-50 p-4 md:p-6">
@@ -74,14 +89,21 @@ export default function CreateProductForm() {
             Url zdjęcia
           </label>
           <div className="relative">
-            <input
+            <select
               id="image_url"
               name="image_url"
-              type="text"
-              placeholder="Wprowadź URL zdjęcia"
-              className="peer block w-full rounded-md border border-gray-200 py-2 pl-10 text-sm outline-2 placeholder:text-gray-500"
-            />
-            <UserCircleIcon className="pointer-events-none absolute left-3 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-gray-500" />
+              className="peer block w-full cursor-pointer rounded-md border border-gray-200 py-2 pl-10 text-sm outline-2 placeholder:text-gray-500"
+            >
+              <option value="" disabled>
+                Wybierz zdjęcie
+              </option>
+              {availableImages.map((image) => (
+                <option key={image.value} value={image.value}>
+                  {image.displayValue}
+                </option>
+              ))}
+            </select>
+            <PhotoIcon className="pointer-events-none absolute left-3 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-gray-500" />
           </div>
         </div>
       </div>
